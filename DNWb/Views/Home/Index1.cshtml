@@ -88,7 +88,7 @@
                         <div class="text-decoration-none">
                             <img src="@Html.DisplayFor(modelItem => item.Img)" alt="img here" height="200" width="460" /> <br />
                             @Html.DisplayFor(modelItem => item.TimePass) m  <br />
-                            @Html.DisplayFor(modelItem => item.Name) <br />
+                            <h3> @Html.DisplayFor(modelItem => item.Name) </h3>  <br />
                             @Html.DisplayFor(modelItem => item.Description)
                         </div>
                       
@@ -99,7 +99,7 @@
                     <a asp-action="#" asp-controller="##" style="text-decoration:none">
                         <img src="@Html.DisplayFor(modelItem => item.Img)" alt="img here" height="200" width="460" /> <br />
                         @Html.DisplayFor(modelItem => item.TimePass) m  <br />
-                        @Html.DisplayFor(modelItem => item.Name) <br />
+                           <h3> @Html.DisplayFor(modelItem => item.Name) </h3> <br />
                         @Html.DisplayFor(modelItem => item.Description)
                     </a>
                 }
