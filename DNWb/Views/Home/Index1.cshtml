@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Bulky.Models.AllItems>
+@using Bulky.Models;
+
+@{
+    ViewData["Title"] = "Index1";
+}
+
+<h1>Index1</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimePass)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null)
+        {
+            @foreach (var item in Model)
+             {
+                 <div class="d-flex flex-row">
+                     <div>
+                        @Html.DisplayFor(modelItem => item.Id)
+                        @Html.DisplayFor(modelItem => item.Name)
+                        @Html.DisplayFor(modelItem => item.Description) 
+                        @Html.DisplayFor(modelItem => item.Img)
+                        @Html.DisplayFor(modelItem => item.TimePass)
+                     </div>
+                </div>
+               @* <tr>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Img)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.TimePass)
+                    </td>
+                    <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+             
+               
+            }
+        }
+      
+    </tbody>
+</table>*@  
+
+  @if(Model != null)
+        {
+    <div class="d-flex flex-row flex-wrap">
+            @foreach (var item in Model)
+             {
+
+            <div class="border border-3 border-secondary ms-3 mb-3 col-lg-5">
+                @if (item.Name == "Stationery")
+                {
+                    <a asp-action="Index" asp-controller="BulkyBooks" style="text-decoration:none">
+                        <div class="text-decoration-none">
+                            <img src="@Html.DisplayFor(modelItem => item.Img)" alt="img here" height="200" width="460" /> <br />
+                            @Html.DisplayFor(modelItem => item.TimePass) m  <br />
+                            @Html.DisplayFor(modelItem => item.Name) <br />
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </div>
+                      
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="#" asp-controller="##" style="text-decoration:none">
+                        <img src="@Html.DisplayFor(modelItem => item.Img)" alt="img here" height="200" width="460" /> <br />
+                        @Html.DisplayFor(modelItem => item.TimePass) m  <br />
+                        @Html.DisplayFor(modelItem => item.Name) <br />
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </a>
+                }
+
+                     </div>
+         
+        }
+    </div>
+             }
