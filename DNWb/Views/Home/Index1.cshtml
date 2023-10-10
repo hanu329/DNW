@@ -82,12 +82,13 @@
             @foreach (var item in Model)
              {
 
-            <div class="border border-3 border-secondary ms-3 mb-3 col-lg-5">
+            <div class="border border-0 border-secondary ms-3 mb-3 col-lg-5" style="color:grey;">
                 @if (item.Name == "Stationery")
                 {
                     <a asp-action="Index" asp-controller="BulkyBooks" style="text-decoration:none">
-                        <div class="text-decoration-none">
-                            <img src="@Html.DisplayFor(modelItem => item.Img)" alt="img here" height="200" width="460" /> <br />
+                        <img src="@Html.DisplayFor(modelItem => item.Img)" alt="img here" height="200" width="460" /> <br />
+
+                        <div class="text-decoration-none" style="padding:15px; line-height:.5;">
                             @Html.DisplayFor(modelItem => item.TimePass) m  <br />
                             <h3> @Html.DisplayFor(modelItem => item.Name) </h3>  <br />
                             @Html.DisplayFor(modelItem => item.Description)
@@ -99,9 +100,11 @@
                 {
                     <a asp-action="#" asp-controller="##" style="text-decoration:none">
                         <img src="@Html.DisplayFor(modelItem => item.Img)" alt="img here" height="200" width="460" /> <br />
-                        @Html.DisplayFor(modelItem => item.TimePass) m  <br />
-                           <h3> @Html.DisplayFor(modelItem => item.Name) </h3> <br />
-                        @Html.DisplayFor(modelItem => item.Description)
+                        <div class="text-decoration-none"  style="padding:15px; line-height:.5">
+                            @Html.DisplayFor(modelItem => item.TimePass) m  <br />
+                            <h3> @Html.DisplayFor(modelItem => item.Name) </h3>  <br />
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </div>
                     </a>
                 }
 
